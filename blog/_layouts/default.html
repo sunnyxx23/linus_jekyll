@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{site.url}}/assets/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1><a href="{{site.url}}">{{site.title}}</a></h1>
+    <section class="posts">
+        <h2 id="title">{{page.title}}</h2>
+
+        {{content}}
+    </section>
+    <ul>
+        {% for category in page.categories %}
+            <li><a href="{{site.url | append: '/category/'}}{{category}}.html">{{category | replace: "-", " "}}</a></li>
+        {% endfor %}
+    </ul>
+{% include footer.html %}
+</body>

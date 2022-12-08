@@ -1,0 +1,20 @@
+{% include head.html %}
+<body>
+    <div class="header">
+        <img src="../assets/img/RL_LOGO.jpg" alt="logo"/>
+        <h1>Rocket League Information Station!</h1>
+        <nav>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="{{site.url}}/About">About</a></li>
+            <li><a href="{{site.url}}/login">Login</a></li>
+          </nav>
+          
+    </div>
+    <ul class="flexcon">
+        {% for post in site.posts %}
+            <li class="car">
+                <a href="{{ post.url }}"><img src="{{post.thumbnail}}" alt="car"><p>{{post.title}}</p></a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>

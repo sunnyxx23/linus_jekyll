@@ -1,0 +1,91 @@
+@mixin clearfix {
+    &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}  
+
+
+body {
+    background-color: #220C10;
+}
+
+.header {
+    img {
+        float: left;
+        width: 50px;
+        height: 50px;
+        background: #555;
+    }
+    h1 {
+        position: relative;
+        top: 18px;
+        left: 10px;
+        color: #506C64;
+    }
+}
+
+.car {
+    margin: 50px;
+    list-style-type: none;
+    & img{
+        width: 300px;
+    }
+    & p{
+        text-align: center;
+    }
+}
+
+
+.flexcon{
+    justify-content: center;
+    display: flex;
+    flex-flow: wrap;
+}
+
+nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #506C64;
+
+    & li {
+        float: left;
+      }
+      
+    & li a {
+        display: block;
+        color: #CDD3D5;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+    & li a:hover {
+        background-color: #111;
+      }
+  }
+
+section.posts {
+    width: 1000px;
+    @include clearfix;
+    
+    #title {
+        color: #506C64;
+    }
+
+  p {
+    color: white;
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+    float: left;
+    img {
+        float: right;
+        position: relative;
+        width: 500px;
+    }
+  }
+}
